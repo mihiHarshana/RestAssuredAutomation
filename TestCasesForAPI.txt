@@ -1,0 +1,76 @@
+Manual Test cases for https://restful-api.dev/
+
+Test Case 01 
+-------------
+Verify the Get request
+
+In this verify https://api.restful-api.dev/objects  
+returns response code 200, 
+object count is more than 1 - (assumed that data will not be removed. 
+Exact count cannot be taken as it could increase)
+
+Test Case 02
+-------------
+
+Verify Post https://api.restful-api.dev/objects
+
+Create a new object and verify that the response is 200 ( acutally creations it should return 201) 
+Compare the test data used with actual created data
+
+assumption : created object id is xxxx
+
+
+Test Case 03 
+------------
+
+pre requistis 
+craeted object id is xxxx
+
+Verify The get https://api.restful-api.dev/objects?id=xxxx
+
+Verify that xxxx object id is returned
+verify the body is containing exactly the same data
+
+
+Test Case 04 
+------------
+
+pre requistis 
+craeted object id is xxxx
+
+
+Verify it is possible to update data using the put request - https://api.restful-api.dev/objects/xxxx
+Returns 200 status code with updatedAt property is returns with the object.
+
+
+Test Case 05 
+------------
+
+pre requistis 
+craeted object id is xxxx
+
+Using DELETE -- https://api.restful-api.dev/objects/xxxx
+
+Verify it is possible to Delete the object with the id xxxx
+
+response code should 200
+it should return the  the follwong Json as response 
+{
+   "message": "Object with id = xxxx, has been deleted."
+}
+
+
+Test Case 06 
+------------
+Verify Post https://api.restful-api.dev/objects without any body
+should return an error 
+
+
+
+Test Case 07 
+------------
+Verify Post https://api.restful-api.dev/objects with only mandatory field name
+should return an error 
+
+
+ 
